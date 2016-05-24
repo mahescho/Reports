@@ -30,6 +30,8 @@ Optional. Specifies the Number of days to report. Default value is "1".
 ```
 Optional. Specifies the Sender of the email. Default value is "NoSpamProxy Report Sender <nospamproxy@example.com>".
 ```
+###Task Scheduler
+To run this by task scheduler the user used to run this scrtip has to be member of the local NoSpamProxy groups.
 
 ###Example
 `.\Get-RejectionReport.ps1 -SMTPHost mail.example.com -ReportRecipient admin@example.com`
