@@ -25,6 +25,8 @@ Optional. Specifies the Sender of the email. Default value is "NoSpamProxy Repor
 ```
 Optional. Specifies the Subject of the email. Default value is "Auswertung".
 ```
+###Task Scheduler
+To run this by task scheduler the user used to run this scrtip has to be member of the local NoSpamProxy groups.
 ###Example
 `.\Send-ReporttoUserswithBlockedEmailsWithAttachment.ps1 -SMTPHost mail.example.com`
 
