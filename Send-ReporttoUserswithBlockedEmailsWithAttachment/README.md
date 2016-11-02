@@ -7,28 +7,37 @@ Sends a report to every E-Mail address that contains all permanently blocked E-M
 
 
 ###Usage
-`Send-ReporttoUserswithBlockedEmailsWithAttachment -SMTPHost [-NumberOfDaysToReport] [-ReportSender] [-ReportSubject]`
+```Send-ReporttoUserswithBlockedEmailsWithAttachment```
 
-- SMTPHost
+Defaults for all parameters could be set in the script.
 ```
-Mandatory. Specifies the SMTP Host which will be used to send the email.
+	[Parameter(Mandatory=$false)][string] $SMTPHost = "sbaas330.kliniken.ssb.local",
+	[Parameter(Mandatory=$false)][int] $NumberOfDaysToReport = 1,
+	[Parameter(Mandatory=$false)][string] $ReportSender = "No Reply <NoReply-SSB@sozialstiftung-bamberg.de>",
+	[Parameter(Mandatory=$false)][string] $ReportSubject = "Auswertung der abgewiesenen E-Mails an Sie",
+	[Parameter(Mandatory=$false)][string] $RuleName = "eingehende Mail",
+	[Parameter(Mandatory=$false)][string] [string]$LogFile = "C:\_SSB-Scripts\Logs\Tst-Send-Reports.log",
+    [Parameter(Mandatory=$false)][switch] $d = $false,
+	[Parameter(Mandatory=$false)][string] $DebugAddress = "",
+	[Parameter(Mandatory=$false)][string] $RecipientIgnorePatter = "^rechnung-",
+    [Parameter(Mandatory=$false)][int] $LOGLEVEL = 0,
+    [Parameter(Mandatory=$false)][switch] $DryRun = $false
 ```
-- NumberOfDaysToReport
-```
-Optional. Specifies the Number of days to report. Default value is "1".
-```
-- ReportSender
-```
-Optional. Specifies the Sender of the email. Default value is "NoSpamProxy Report Sender <nospamproxy@example.com>".
-```
-- ReportSubject
-```
-Optional. Specifies the Subject of the email. Default value is "Auswertung".
-```
+
+- SMTPHost: Specifies the SMTP Host which will be used to send the email.
+- NumberOfDaysToReport: Specifies the Number of days to report.
+- ReportSender: Specifies the Sender of the email.
+- ReportSubject: Specifies the Subject of generated the emails.
+- RuleName: Name of the NoSpamProxy rule for incoming mail.
+- LogFile: Absolute path to log file.
+- d: Debug switch. Debugging is enabled when set.
+- DebugAddress: Only look at this email address.
+- RecipientIgnorePatter: Regexp Pattern for email addresses to ignore.
+- LOGLEVEL: INFO = 4, WARN = 3, ERROR = 2, DEBUG = 1
+- DryRun: Do not send any message.
+
 ###Task Scheduler
-To run this by task scheduler the user used to run this scrtip has to be member of the local NoSpamProxy groups.
-###Example
-`.\Send-ReporttoUserswithBlockedEmailsWithAttachment.ps1 -SMTPHost mail.example.com`
+To run this by task scheduler the user used to run this script has to be member of the local NoSpamProxy groups.
 
 ###Supported NoSpamProxy Versions
-This Script works for every NoSpamProxy version 10.x and higher.
+Tested with 11.X
