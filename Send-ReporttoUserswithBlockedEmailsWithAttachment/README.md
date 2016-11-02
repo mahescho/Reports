@@ -7,10 +7,10 @@ Sends a report to every E-Mail address that contains all permanently blocked E-M
 
 
 ###Usage
-```Send-ReporttoUserswithBlockedEmailsWithAttachment```
+`Send-ReporttoUserswithBlockedEmailsWithAttachment`
 
 Defaults for all parameters could be set in the script.
-```
+`
 	[Parameter(Mandatory=$false)][string] $SMTPHost = "sbaas330.kliniken.ssb.local",
 	[Parameter(Mandatory=$false)][int] $NumberOfDaysToReport = 1,
 	[Parameter(Mandatory=$false)][string] $ReportSender = "No Reply <NoReply-SSB@sozialstiftung-bamberg.de>",
@@ -22,7 +22,7 @@ Defaults for all parameters could be set in the script.
 	[Parameter(Mandatory=$false)][string] $RecipientIgnorePatter = "^rechnung-",
     [Parameter(Mandatory=$false)][int] $LOGLEVEL = 0,
     [Parameter(Mandatory=$false)][switch] $DryRun = $false
-```
+`
 
 - SMTPHost: Specifies the SMTP Host which will be used to send the email.
 - NumberOfDaysToReport: Specifies the Number of days to report.
