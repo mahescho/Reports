@@ -13,15 +13,15 @@ Defaults for all parameters could be set in the script.
 
 
 ```
-	[Parameter(Mandatory=$false)][string] $SMTPHost = "sbaas330.kliniken.ssb.local",
+	[Parameter(Mandatory=$false)][string] $SMTPHost = "your.smtp.host",
 	[Parameter(Mandatory=$false)][int] $NumberOfDaysToReport = 1,
-	[Parameter(Mandatory=$false)][string] $ReportSender = "No Reply <NoReply-SSB@sozialstiftung-bamberg.de>",
+	[Parameter(Mandatory=$false)][string] $ReportSender = "NoSpamProxy Report Sender <nospamproxy@example.com>",
 	[Parameter(Mandatory=$false)][string] $ReportSubject = "Auswertung der abgewiesenen E-Mails an Sie",
-	[Parameter(Mandatory=$false)][string] $RuleName = "eingehende Mail",
-	[Parameter(Mandatory=$false)][string] [string]$LogFile = "C:\_SSB-Scripts\Logs\Tst-Send-Reports.log",
+	[Parameter(Mandatory=$false)][string] $RuleName = "incoming mail",
+	[Parameter(Mandatory=$false)][string] [string]$LogFile = "c:\path\to\your\logfile.log",
     [Parameter(Mandatory=$false)][switch] $d = $false,
 	[Parameter(Mandatory=$false)][string] $DebugAddress = "",
-	[Parameter(Mandatory=$false)][string] $RecipientIgnorePatter = "^rechnung-",
+	[Parameter(Mandatory=$false)][string] $RecipientIgnorePatter = "",
     [Parameter(Mandatory=$false)][int] $LOGLEVEL = 0,
     [Parameter(Mandatory=$false)][switch] $DryRun = $false
 ```
